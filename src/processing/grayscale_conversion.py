@@ -6,7 +6,7 @@ def matrix_decomposition(np_array):
     return R, G, B
 
 # Converts R, G, B to grayscale || R, G, B are numpy arrays
-def convert_RGB_to_grayscale(R, G, B):
+def rgb_to_grayscale(R, G, B):
     R = R * 0.299
     G = G * 0.587
     B = B * 0.114
