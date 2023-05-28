@@ -23,7 +23,6 @@ def load_image_as_array(path: str):
         return None
 
 # Display image using matplotlib || Takes numpy array
-def display_array_image(np_array):
-    print(f'Displaying following array\n\033[32m{np_array}\033[0m')
-    plt.imshow(np_array)
+def display_array_image(np_array, cmap):
+    plt.imshow(np_array, cmap=cmap)
     plt.show()
