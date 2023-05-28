@@ -20,6 +20,7 @@ def load_image_as_array(path: str):
         print('Found image.')
         return iio.imread(path)
     else:
+        print('No image found.')
         return None
 
 # Display image using matplotlib || Takes numpy array
