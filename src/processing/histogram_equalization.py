@@ -8,5 +8,5 @@ def compute_histogram(np_array):
 
     grayscale = rgb_to_grayscale(R, G, B)
 
-    # Use bincount to compute the histogram
-    return np.bincount(grayscale.flatten(), minlength=256)
+    # Use built-in np function to compute the histogram
+    return np.histogram(grayscale.flatten(), bins=256, range=[0,256])
