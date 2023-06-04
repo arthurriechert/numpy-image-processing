@@ -10,3 +10,9 @@ def compute_histogram(np_array):
 
     # Use built-in np function to compute the histogram
     return np.histogram(grayscale.flatten(), bins=256, range=[0,256])
+
+def test(np_array):
+
+    histogram,_ = compute_histogram(np_array)
+
+    print(f"Histogram for the Image: {histogram}")
