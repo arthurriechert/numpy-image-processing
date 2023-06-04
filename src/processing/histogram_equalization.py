@@ -18,6 +18,18 @@ def compute_cdf(probabilities):
 
     return np.cumsum(probabilities)
 
+# Apply the histogram
+def equalize(image_array, cdf_array):
+    
+    # Convert elements to integer indices
+    indices = image_array.astype(np.uint32)
+
+    # Create mapping for original to new values
+    intensity_mapping = np.uint8(255 * cdf_array)
+
+    # Apply transformation
+    return intensity_mapping[indices]
+
 def test(np_array):
 
     histogram,_ = compute_histogram(np_array)
@@ -25,6 +37,8 @@ def test(np_array):
     probabilties = compute_probabilties(histogram)
 
     cdf = compute_cdf(probabilties)
+
+    equalized_image = equalize(np_array, cdf)
 
     print(f"""
         ###### HISTOGRAM ######
@@ -39,4 +53,10 @@ def test(np_array):
         ###### CDF ######
 
         {cdf}
+
+        
+        ###### NEW IMAGE ARRAY ######
+
+        {equalized_image}
+        
         """)
