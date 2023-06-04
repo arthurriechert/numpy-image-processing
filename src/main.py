@@ -2,6 +2,7 @@ import processing.load_image as pr
 import processing.grayscale_conversion as gsc
 import processing.negative_conversion as nc
 import processing.add_contrast as ac
+import processing.histogram_equalization as he
 
 if __name__ == "__main__":
     image_array = pr.load_image_as_array('../images/smiling-guy.jpg')
